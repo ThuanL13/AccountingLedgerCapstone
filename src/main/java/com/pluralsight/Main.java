@@ -8,8 +8,8 @@ public class Main {
     // Main Method
     public static void main(String[] args) {
         homeScreen();
-
-        //
+        // Creates csv file if it doesn't exist
+        FileManager.createFile();
     }
     // Method for home screen menu
     public static void homeScreen() {
@@ -35,5 +35,18 @@ public class Main {
         }
         System.out.println("Exiting Menu, Goodbye!"); // Prints exit message when X is chosen
     }
+    // Method for deposit transaction
+    public static void addDeposit() {
+        // Asking for user input (Description, vendor, amount)
+        System.out.println("Description: ");
+        String description = read.nextLine();
 
+        System.out.println("Vendor: ");
+        String vendor = read.nextLine();
+
+        System.out.println("Amount: ");
+        Double amount = Double.parseDouble(read.nextLine());
+
+
+    }
 }
