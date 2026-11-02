@@ -1,13 +1,15 @@
 package com.pluralsight;
-import java.util.Locale;
+import java.util.*;
 import java.util.Scanner;
 
 public class Main {
-    // Scanner in public main to call throughout
+    // Scanner in public class Main to call throughout
     public static Scanner read = new Scanner(System.in);
     // Main Method
     public static void main(String[] args) {
         homeScreen();
+
+        //
     }
     // Method for home screen menu
     public static void homeScreen() {
