@@ -45,8 +45,28 @@ public class Main {
         String vendor = read.nextLine();
 
         System.out.println("Amount: ");
+        // Converts input to a Double
         Double amount = Double.parseDouble(read.nextLine());
 
+        // Adds transaction and makes it a positive number
+        FileManager.addTransaction(description, vendor, Math.abs(amount));
+        System.out.println("Deposit saved! :)");
+    }
+    // Method for payment transaction
+    public static void addPayment() {
+        // Asking for user input
+        System.out.println("Description: ");
+        String description = read.nextLine();
 
+        System.out.println("Vendor: ");
+        String vendor = read.nextLine();
+
+        System.out.println("Amount: ");
+        // Converts input to a Double
+        Double amount = Double.parseDouble(read.nextLine());
+
+        // Saves amount as negative
+        FileManager.addTransaction(description, vendor, -Math.abs(amount));
+        System.out.println("Payment Saved! :)");
     }
 }
