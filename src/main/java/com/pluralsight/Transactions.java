@@ -59,4 +59,15 @@ public class Transactions {
     public void setAmount(double amount) {
         this.amount = amount;
     }
+
+    @Override
+    public String toString() {
+        return "Transactions{" +
+                "date = " + date +
+                ", time = " + time +
+                ", description = ' " + description + '\'' +
+                ", vendor = ' " + vendor + '\'' +
+                ", amount = " + amount +
+                '}';
+    }
 }
