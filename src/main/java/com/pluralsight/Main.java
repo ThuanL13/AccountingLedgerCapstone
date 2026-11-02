@@ -19,7 +19,7 @@ public class Main {
             System.out.println("L) Check Ledger");
             System.out.println("X) Exit Menu");
 
-            String choice = read.nextLine().toUpperCase(); // Reads user input and brings it to uppercase
+            String choice = read.nextLine().trim().toUpperCase(); // Reads user input, trims and brings it to uppercase
 
             // Switch for choice cases
             switch (choice) {
@@ -33,4 +33,5 @@ public class Main {
         }
         System.out.println("Exiting Menu, Goodbye!"); // Prints exit message when X is chosen
     }
+
 }
