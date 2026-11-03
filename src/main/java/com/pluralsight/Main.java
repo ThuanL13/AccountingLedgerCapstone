@@ -21,6 +21,7 @@ public class Main {
             System.out.println("P) Make a Payment");
             System.out.println("L) Check Ledger");
             System.out.println("X) Exit Menu");
+            System.out.println("Please choose what you would like to do: ");
 
             String choice = read.nextLine().trim().toUpperCase(); // Reads user input, trims and brings it to uppercase
 
@@ -110,6 +111,7 @@ public class Main {
 
             switch (choice) {
                 case "1" -> ReportManager.monthToDate();
+
             }
         }
     }
