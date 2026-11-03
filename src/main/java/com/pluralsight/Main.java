@@ -121,6 +121,8 @@ public class Main {
                     String vendor = read.nextLine();
                     ReportManager.searchVendor(vendor);
                 }
+                case "0" -> running = false;
+                default -> System.out.println("Invalid choice!");
             }
         }
     }
