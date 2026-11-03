@@ -16,7 +16,7 @@ public class FileManager {
             File file = new File(fileName);
             if ((!file.exists())) { // If the file does not exist
                 file.createNewFile(); // creates the new file
-                System.out.println("transfactions.csv file created!");
+                System.out.println("transactions.csv file created!");
             }
         } catch (IOException e) {
             System.out.println("Error creating file");
