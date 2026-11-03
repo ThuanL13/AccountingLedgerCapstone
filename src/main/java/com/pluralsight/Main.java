@@ -81,6 +81,7 @@ public class Main {
             System.out.println("P) Display Payments");
             System.out.println("R) Go To Reports");
             System.out.println("H) Home Screen");
+            System.out.println("Please choose an option.");
 
             String choice = read.nextLine().toUpperCase();
 
@@ -106,6 +107,7 @@ public class Main {
             System.out.println("4) Previous Year");
             System.out.println("5) Search by Vendor");
             System.out.println("0) Go Back");
+            System.out.println("Please choose an option.");
 
             String choice = read.nextLine();
 
