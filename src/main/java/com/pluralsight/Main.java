@@ -16,7 +16,7 @@ public class Main {
         boolean running = true; // for the while loop to run home screen menu
         while (running) { // While running is true
             System.out.println("\n===^ Accounting Ledger ^===");
-            System.out.println("\n===== Home Menu =====");
+            System.out.println("\n======* Home Menu *======");
             System.out.println("D) Add a Deposit");
             System.out.println("P) Make a Payment");
             System.out.println("L) Check Ledger");
@@ -73,8 +73,25 @@ public class Main {
     // Ledger Menu
     public static void ledgerScreen() {
         boolean running = true;
-        while (running) {
+        while (running) { // While running = true, show menu
             System.out.println("\n===^ Ledger Menu ^===");
+            System.out.println("A) Display All");
+            System.out.println("D) Display Deposits");
+            System.out.println("P) Display Payments");
+            System.out.println("R) Go To Reports");
+            System.out.println("H) Home Screen");
+
+            String choice = read.nextLine().toUpperCase();
+
+            switch (choice) {
+                case "A" -> LegderManager.displayAll();
+                case "D" -> LegderManager.displayDeposits();
+                case "P" -> LegderManager.displayPayments();
+                case "R" -> reportsScreen();
+                case "H" -> running = false;
+
+                default -> System.out.println("Invalid Choice.");
+            }
         }
     }
 }
