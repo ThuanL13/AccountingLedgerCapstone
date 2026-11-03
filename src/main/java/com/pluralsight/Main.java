@@ -116,7 +116,11 @@ public class Main {
                 case "2" -> ReportManager.previousMonth();
                 case "3" -> ReportManager.yearToDate();
                 case "4" -> ReportManager.previousYear();
-
+                case "5" -> {
+                    System.out.println("Vendor Name: ");
+                    String vendor = read.nextLine();
+                    ReportManager.searchVendor(vendor);
+                }
             }
         }
     }
