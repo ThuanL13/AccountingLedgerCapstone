@@ -109,7 +109,7 @@ public class Main {
             String choice = read.nextLine();
 
             switch (choice) {
-
+                case "1" -> ReportManager.monthToDate();
             }
         }
     }
