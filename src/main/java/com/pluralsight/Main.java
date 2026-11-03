@@ -106,6 +106,7 @@ public class Main {
             System.out.println("3) Year to Date");
             System.out.println("4) Previous Year");
             System.out.println("5) Search by Vendor");
+            System.out.println("6) Custom Search");
             System.out.println("0) Go Back");
             System.out.println("Please choose an option.");
 
@@ -121,7 +122,7 @@ public class Main {
                     String vendor = read.nextLine();
                     ReportManager.searchVendor(vendor);
                 }
-                case "0" -> running = false;
+                case "0" -> running = false; // Leaves reports menu, goes back to ledger
                 default -> System.out.println("Invalid choice!");
             }
         }

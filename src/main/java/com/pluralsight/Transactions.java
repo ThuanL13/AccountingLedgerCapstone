@@ -59,7 +59,7 @@ public class Transactions {
     public void setAmount(double amount) {
         this.amount = amount;
     }
-    // For sout(transactions) to print out format
+    // For sout(t) to print out format
     @Override
     public String toString() {
         return "Transactions{" +
