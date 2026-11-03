@@ -14,4 +14,12 @@ public class LegderManager {
             }
         }
     }
+    // Method to display only payments
+    public static void displayPayments() {
+        for (Transactions t : FileManager.loadTransactions()) {
+            if (t.getAmount() < 0) {
+                System.out.println(t);
+            }
+        }
+    }
 }
