@@ -43,4 +43,11 @@ public class ReportManager {
             }
         }
     }
+    public static void searchVendor(String vendorName) {
+        for (Transactions t : FileManager.loadTransactions()) {
+            if (t.getVendor().equalsIgnoreCase(vendorName)) {
+                System.out.println(t);
+            }
+        }
+    }
 }
