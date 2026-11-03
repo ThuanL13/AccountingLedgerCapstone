@@ -6,4 +6,12 @@ public class LegderManager {
             System.out.println(t); // Calling toString
         }
     }
+    // Method to display only deposits
+    public static void displayDeposits() {
+        for (Transactions t : FileManager.loadTransactions()) {
+            if (t.getAmount() > 0) { // if amount is > 0
+                System.out.println(t);
+            }
+        }
+    }
 }
