@@ -9,7 +9,7 @@ public class LegderManager {
     // Method to display only deposits
     public static void displayDeposits() {
         for (Transactions t : FileManager.loadTransactions()) {
-            if (t.getAmount() > 0) { // if amount is > 0
+            if (t.getAmount() > 0) { // if amount is > 0, Deposits are postive amounts
                 System.out.println(t);
             }
         }
@@ -17,7 +17,7 @@ public class LegderManager {
     // Method to display only payments
     public static void displayPayments() {
         for (Transactions t : FileManager.loadTransactions()) {
-            if (t.getAmount() < 0) {
+            if (t.getAmount() < 0) { // Payments are in negative amounts
                 System.out.println(t);
             }
         }
