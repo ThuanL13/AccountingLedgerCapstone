@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.time.LocalDate;
+import java.time.YearMonth;
 
 public class ReportManager {
     public static void monthToDate() { // Month to date report
@@ -13,5 +14,15 @@ public class ReportManager {
             }
         }
     }
+    public static void previousMonth() {
+        YearMonth previousMonth = YearMonth.now().minusMonths(1); // Returns previous month
 
+        // Looping through all transactions
+        for (Transactions t : FileManager.loadTransactions()) {
+            YearMonth transactionMonth = YearMonth.from(t.getDate()); // Converts transaction date to YearMonth
+            if (transactionMonth.equals(previousMonth)) { // If transaction was in previous month
+                System.out.println(t);
+            }
+        }
+    }
 }
