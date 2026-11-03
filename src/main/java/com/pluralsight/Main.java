@@ -115,6 +115,8 @@ public class Main {
                 case "1" -> ReportManager.monthToDate();
                 case "2" -> ReportManager.previousMonth();
                 case "3" -> ReportManager.yearToDate();
+                case "4" -> ReportManager.previousYear();
+
             }
         }
     }

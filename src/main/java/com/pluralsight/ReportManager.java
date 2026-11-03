@@ -34,4 +34,13 @@ public class ReportManager {
             }
         }
     }
+    public static void previousYear() {
+        int previousYear = LocalDate.now().getYear() - 1; // Gets current year and goes back 1 year
+
+        for (Transactions t : FileManager.loadTransactions()) {
+            if (t.getDate().getYear() == previousYear) { // If transaction is in previous year
+                System.out.println(t);
+            }
+        }
+    }
 }
