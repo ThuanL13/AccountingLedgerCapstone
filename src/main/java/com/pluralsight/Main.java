@@ -15,7 +15,8 @@ public class Main {
     public static void homeScreen() {
         boolean running = true; // for the while loop to run home screen menu
         while (running) { // While running is true
-            System.out.println("\n=== Accounting Ledger ===");
+            System.out.println("\n===^ Accounting Ledger ^===");
+            System.out.println("\n===== Home Menu =====");
             System.out.println("D) Add a Deposit");
             System.out.println("P) Make a Payment");
             System.out.println("L) Check Ledger");
@@ -68,5 +69,12 @@ public class Main {
         // Saves amount as negative
         FileManager.addTransaction(description, vendor, -Math.abs(amount));
         System.out.println("Payment Saved! :)");
+    }
+    // Ledger Menu
+    public static void ledgerScreen() {
+        boolean running = true;
+        while (running) {
+            System.out.println("\n===^ Ledger Menu ^===");
+        }
     }
 }
