@@ -25,4 +25,13 @@ public class ReportManager {
             }
         }
     }
+    public static void yearToDate() {
+        int currentYear = LocalDate.now().getYear(); // Getting current year
+
+        for (Transactions t : FileManager.loadTransactions()) { // Looping through transactions
+            if (t.getDate().getYear() == currentYear) { // If transaction is in current year
+                System.out.println(t);
+            }
+        }
+    }
 }
