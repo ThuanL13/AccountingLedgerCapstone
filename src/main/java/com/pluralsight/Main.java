@@ -98,7 +98,19 @@ public class Main {
     public static void reportsScreen() {
         boolean running = true;
         while (running) {
+            System.out.println("\n===^ Reports ^===");
+            System.out.println("1) Month to Date");
+            System.out.println("2) Previous Month");
+            System.out.println("3) Year to Date");
+            System.out.println("4) Previous Year");
+            System.out.println("5) Search by Vendor");
+            System.out.println("0) Go Back");
 
+            String choice = read.nextLine();
+
+            switch (choice) {
+
+            }
         }
     }
 }
