@@ -94,4 +94,11 @@ public class Main {
             }
         }
     }
+    // Reports Menu
+    public static void reportsScreen() {
+        boolean running = true;
+        while (running) {
+
+        }
+    }
 }
