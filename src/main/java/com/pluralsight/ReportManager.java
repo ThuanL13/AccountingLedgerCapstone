@@ -95,7 +95,7 @@ public class ReportManager {
             }
             // Vendor filter
             if (!vendor.isBlank() &&
-                    !t.getVendor().toLowerCase().contains(description.toLowerCase())) {
+                    !t.getVendor().toLowerCase().contains(vendor.toLowerCase())) {
                 matches = false;
             }
             // Amount filter
