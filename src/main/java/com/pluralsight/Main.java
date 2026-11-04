@@ -122,6 +122,8 @@ public class Main {
                     String vendor = read.nextLine();
                     ReportManager.searchVendor(vendor);
                 }
+                // Custom search
+                case "6" -> {}
                 case "0" -> running = false; // Leaves reports menu, goes back to ledger
                 default -> System.out.println("Invalid choice!");
             }

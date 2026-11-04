@@ -50,4 +50,9 @@ public class ReportManager {
             }
         }
     }
+    // *Bonus* Custom Search
+    public static void customSearch(String startDate, String endDate, String description,
+                                    String vendor, String amount) {
+
+    }
 }
