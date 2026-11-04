@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.YearMonth;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ReportManager {
     public static void monthToDate() { // Month to date report
@@ -47,7 +48,7 @@ public class ReportManager {
     }
     public static void searchVendor(String vendorName) {
         for (Transactions t : FileManager.loadTransactions()) {
-            if (t.getVendor().equalsIgnoreCase(vendorName)) {
+            if (t.getVendor().contains(vendorName.toLowerCase())) { // Can do partial search for vendor name
                 System.out.println(t);
             }
         }
@@ -72,6 +73,38 @@ public class ReportManager {
         // Parsing string entered into Double
         if (!amount.isBlank()) {
             amountValue = Double.parseDouble(amount);
+        }
+        // Checking every transaction
+        for (Transactions t : transactions) {
+            // Assumes it matches unless false
+            boolean matches = true;
+
+            // Rejects dates before start date
+            if (start != null && t.getDate().isBefore(start)) {
+                matches = false;
+            }
+            // Rejects dates after end date
+            if(end != null && t.getDate().isAfter(end)) {
+                matches = false;
+            }
+            // Checking description filter
+            if (!description.isBlank() &&
+                    !t.getDescription().toLowerCase().contains(description.toLowerCase())) {
+                matches = false;
+            }
+            // Vendor filter
+            if (!vendor.isBlank() &&
+                    !t.getVendor().toLowerCase().contains(description.toLowerCase())) {
+                matches = false;
+            }
+            // Amount filter
+            if (amountValue != null && Math.abs(t.getAmount() - amountValue) > 0.001) {
+                matches = false;
+            }
+            // If transaction passes all filters
+            if (matches) {
+                System.out.println(t);
+            }
         }
     }
 }
