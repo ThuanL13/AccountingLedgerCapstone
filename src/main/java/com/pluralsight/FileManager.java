@@ -42,14 +42,14 @@ public class FileManager {
         }
     }
     // Method to read all transactions from csv file
-    public static ArrayList<Transactions> loadTransactions() {
-        ArrayList<Transactions> transactions = new ArrayList<>(); // Creating list to hold transactions
+    public static ArrayList<Transaction> loadTransactions() {
+        ArrayList<Transaction> transactions = new ArrayList<>(); // Creating list to hold transactions
         try {
             BufferedReader bufReader = new BufferedReader(new FileReader(fileName));
             String line; // Stores one line
             while ((line = bufReader.readLine()) != null) { // Read until there is no more
                 String[] parts = line.split("\\|"); // Split rows using "|"
-                Transactions transaction = new Transactions(
+                Transaction transaction = new Transaction(
                         LocalDate.parse(parts[0]), // Date -> Local Date
                         LocalTime.parse(parts[1]), // Time -> Local Time
                         parts[2], // Description
@@ -63,8 +63,8 @@ public class FileManager {
             System.out.println("Error Reading File!"); // Error message
         }
         // Sorting transactions by newest first
-        transactions.sort(Comparator.comparing(Transactions::getDate) // By Date
-                .thenComparing(Transactions::getTime) // Then by Time
+        transactions.sort(Comparator.comparing(Transaction::getDate) // By Date
+                .thenComparing(Transaction::getTime) // Then by Time
                 .reversed()); // Reversing the order
         return transactions; // Returns completed list
     }

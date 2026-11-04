@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Transactions {
+public class Transaction {
     // Variables to store date, time, description, vendor and amount
     private LocalDate date;
     private LocalTime time;
@@ -12,7 +12,7 @@ public class Transactions {
     private double amount;// Positive = Deposit | Negative = Payment
 
     // Constructor for creating new Transaction object
-    public Transactions(LocalDate date, LocalTime time, String description, String vendor, double amount) {
+    public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
         this.date = date;
         this.time = time;
         this.description = description;
@@ -38,12 +38,10 @@ public class Transactions {
     // For sout(t) to print out format
     @Override
     public String toString() {
-        return "Transactions{" +
-                "date = " + date +
-                ", time = " + time +
-                ", description = ' " + description + '\'' +
-                ", vendor = ' " + vendor + '\'' +
-                ", amount = " + amount +
-                '}';
+        return date + " | "
+                + time + " | "
+                + description + " | "
+                + vendor + " | "
+                + String.format("%.2f", amount);
     }
 }
