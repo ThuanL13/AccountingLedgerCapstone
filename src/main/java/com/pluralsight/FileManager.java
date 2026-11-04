@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-import java.io.File;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -9,11 +8,11 @@ import java.util.Comparator;
 
 public class FileManager {
     // Constant to store file name
-    private static final String fileName = "transactions.csv";
+    private static final String FILE_NAME = "transactions.csv";
     // Creates transactions.csv if it doesn't already exist.
     public static void createFile() {
         try {
-            File file = new File(fileName);
+            File file = new File(FILE_NAME);
             if ((!file.exists())) { // If the file does not exist
                 file.createNewFile(); // creates the new file
                 System.out.println("transactions.csv file created!");
@@ -25,7 +24,7 @@ public class FileManager {
     // Method for saving transaction to csv file
     public static void addTransaction(String description, String vendor, double amount) {
         try {// Try writing to file
-            FileWriter writer = new FileWriter(fileName, true); // True = don't erase existing data
+            FileWriter writer = new FileWriter(FILE_NAME, true); // True = don't erase existing data
             // Builds one transaction line
             String line =
                     LocalDate.now() + "|" +
@@ -45,7 +44,7 @@ public class FileManager {
     public static ArrayList<Transaction> loadTransactions() {
         ArrayList<Transaction> transactions = new ArrayList<>(); // Creating list to hold transactions
         try {
-            BufferedReader bufReader = new BufferedReader(new FileReader(fileName));
+            BufferedReader bufReader = new BufferedReader(new FileReader(FILE_NAME));
             String line; // Stores one line
             while ((line = bufReader.readLine()) != null) { // Read until there is no more
                 String[] parts = line.split("\\|"); // Split rows using "|"
