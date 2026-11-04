@@ -1,10 +1,9 @@
 package com.pluralsight;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.YearMonth;
 import java.util.ArrayList;
-import java.util.Locale;
+
 
 public class ReportManager {
     public static void monthToDate() { // Month to date report
