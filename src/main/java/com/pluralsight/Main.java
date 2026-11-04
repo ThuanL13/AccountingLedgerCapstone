@@ -16,7 +16,7 @@ public class Main {
         boolean running = true; // for the while loop to run home screen menu
         while (running) { // While running is true
             System.out.println("\n===^ Accounting Ledger ^===");
-            System.out.println("\n======* Home Menu *======");
+            System.out.println("======* Home Menu *======");
             System.out.println("D) Add a Deposit");
             System.out.println("P) Make a Payment");
             System.out.println("L) Check Ledger");
