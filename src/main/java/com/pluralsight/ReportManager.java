@@ -47,7 +47,9 @@ public class ReportManager {
     }
     public static void searchVendor(String vendorName) {
         for (Transactions t : FileManager.loadTransactions()) {
-            if (t.getVendor().contains(vendorName.toLowerCase())) { // Can do partial search for vendor name
+            if (t.getVendor()
+                    .toLowerCase()
+                    .contains(vendorName.toLowerCase())) { // Can do partial search for vendor name
                 System.out.println(t);
             }
         }
