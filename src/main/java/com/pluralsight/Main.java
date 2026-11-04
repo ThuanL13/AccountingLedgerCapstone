@@ -123,7 +123,25 @@ public class Main {
                     ReportManager.searchVendor(vendor);
                 }
                 // Custom search
-                case "6" -> {}
+                case "6" -> {
+                    System.out.println("Start Date (yyyy-MM-dd): ");
+                    String startDate = read.nextLine();
+
+                    System.out.println("End Date (yyyy-MM-dd): ");
+                    String endDate = read.nextLine();
+
+                    System.out.println("Description: ");
+                    String description = read.nextLine();
+
+                    System.out.println("Vendor: ");
+                    String vendor = read.nextLine();
+
+                    System.out.println("Amount: ");
+                    String amount = read.nextLine();
+
+                    ReportManager.customSearch(
+                            startDate, endDate, description, vendor, amount);
+                }
                 case "0" -> running = false; // Leaves reports menu, goes back to ledger
                 default -> System.out.println("Invalid choice!");
             }
