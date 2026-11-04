@@ -1,7 +1,9 @@
 package com.pluralsight;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.YearMonth;
+import java.util.ArrayList;
 
 public class ReportManager {
     public static void monthToDate() { // Month to date report
@@ -53,6 +55,23 @@ public class ReportManager {
     // *Bonus* Custom Search
     public static void customSearch(String startDate, String endDate, String description,
                                     String vendor, String amount) {
+        ArrayList<Transactions> transactions = FileManager.loadTransactions(); // Loads every transaction
 
+        // Initializing variables used in filtering
+        LocalDate start = null;
+        LocalDate end = null;
+        Double amountValue = null;
+
+        // Parsing string entered into LocalDates
+        if (!startDate.isBlank()) {
+            start = LocalDate.parse(startDate);
+        }
+        if (!endDate.isBlank()) {
+            end =LocalDate.parse(endDate);
+        }
+        // Parsing string entered into Double
+        if (!amount.isBlank()) {
+            amountValue = Double.parseDouble(amount);
+        }
     }
 }
