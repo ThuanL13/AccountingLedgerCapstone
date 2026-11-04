@@ -1,5 +1,4 @@
 package com.pluralsight;
-import java.util.*;
 import java.util.Scanner;
 
 public class Main {
@@ -7,9 +6,10 @@ public class Main {
     public static Scanner read = new Scanner(System.in);
     // Main Method
     public static void main(String[] args) {
-        homeScreen();
         // Creates csv file if it doesn't exist
         FileManager.createFile();
+
+        homeScreen();
     }
     // Method for home screen menu
     public static void homeScreen() {
@@ -86,9 +86,9 @@ public class Main {
             String choice = read.nextLine().toUpperCase();
 
             switch (choice) {
-                case "A" -> LegderManager.displayAll();
-                case "D" -> LegderManager.displayDeposits();
-                case "P" -> LegderManager.displayPayments();
+                case "A" -> LedgerManager.displayAll();
+                case "D" -> LedgerManager.displayDeposits();
+                case "P" -> LedgerManager.displayPayments();
                 case "R" -> reportsScreen();
                 case "H" -> running = false;
 
