@@ -48,7 +48,7 @@ public class Main {
 
         System.out.println("Amount: ");
         // Converts input to a Double
-        Double amount = Double.parseDouble(read.nextLine());
+        double amount = Double.parseDouble(read.nextLine());
 
         // Adds transaction and makes it a positive number
         FileManager.addTransaction(description, vendor, Math.abs(amount));
@@ -65,7 +65,7 @@ public class Main {
 
         System.out.println("Amount: ");
         // Converts input to a Double
-        Double amount = Double.parseDouble(read.nextLine());
+        double amount = Double.parseDouble(read.nextLine());
 
         // Saves amount as negative
         FileManager.addTransaction(description, vendor, -Math.abs(amount));
