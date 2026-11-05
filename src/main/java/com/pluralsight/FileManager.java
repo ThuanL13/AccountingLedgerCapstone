@@ -41,6 +41,7 @@ public class FileManager {
         }
     }
     // Method to read all transactions from csv file
+    // Also where the csv file will be parsed
     public static ArrayList<Transaction> loadTransactions() {
         ArrayList<Transaction> transactions = new ArrayList<>(); // Creating list to hold transactions
         try {
@@ -51,8 +52,8 @@ public class FileManager {
                 Transaction transaction = new Transaction(
                         LocalDate.parse(parts[0]), // Date -> Local Date
                         LocalTime.parse(parts[1]), // Time -> Local Time
-                        parts[2], // Description
-                        parts[3], // Vendor
+                        parts[2], // Description of expense or sale
+                        parts[3], // Supplier/Customer
                         Double.parseDouble(parts[4]) // Amount -> double
                 );
                 transactions.add(transaction); // Storing into Array List
@@ -61,7 +62,7 @@ public class FileManager {
         }catch (IOException e) {
             System.out.println("Error Reading File!"); // Error message
         }
-        // Sorting transactions by newest first
+        // Sorting transactions
         transactions.sort(Comparator.comparing(Transaction::getDate) // By Date
                 .thenComparing(Transaction::getTime) // Then by Time
                 .reversed()); // Reversing the order

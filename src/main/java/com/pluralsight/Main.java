@@ -15,12 +15,12 @@ public class Main {
     public static void homeScreen() {
         boolean running = true; // for the while loop to run home screen menu
         while (running) { // While running is true
-            System.out.println("\n===^ Accounting Ledger ^===");
-            System.out.println("======* Home Menu *======");
-            System.out.println("D) Add a Deposit");
-            System.out.println("P) Make a Payment");
-            System.out.println("L) Check Ledger");
-            System.out.println("X) Exit Menu");
+            System.out.println("\n===^\uD83D\uDC31\uD83D\uDCDA FAT CAT BOOKSTORE \uD83D\uDCDA\uD83D\uDC31^===");
+            System.out.println("===========* Home Menu *===========");
+            System.out.println("D) Record Book Sale");
+            System.out.println("P) Record Store Expense");
+            System.out.println("L) View Financial Ledger");
+            System.out.println("X) Close Book Store");
             System.out.println("Please choose what you would like to do: ");
 
             String choice = read.nextLine().trim().toUpperCase(); // Reads user input, trims and brings it to uppercase
@@ -40,46 +40,46 @@ public class Main {
     // Method for deposit transaction
     public static void addDeposit() {
         // Asking for user input (Description, vendor, amount)
-        System.out.println("Description: ");
+        System.out.println("Book: ");
         String description = read.nextLine();
 
-        System.out.println("Vendor: ");
+        System.out.println("Customer: ");
         String vendor = read.nextLine();
 
-        System.out.println("Amount: ");
+        System.out.println("Sale Amount: ");
         // Converts input to a Double
         double amount = Double.parseDouble(read.nextLine());
 
         // Adds transaction and makes it a positive number
         FileManager.addTransaction(description, vendor, Math.abs(amount));
-        System.out.println("Deposit saved! :)");
+        System.out.println("✅ Book Sale Recorded! :)");
     }
     // Method for payment transaction
     public static void addPayment() {
         // Asking for user input
-        System.out.println("Description: ");
+        System.out.println("Expense: ");
         String description = read.nextLine();
 
-        System.out.println("Vendor: ");
+        System.out.println("Supplier: ");
         String vendor = read.nextLine();
 
-        System.out.println("Amount: ");
+        System.out.println("Expense Amount: ");
         // Converts input to a Double
         double amount = Double.parseDouble(read.nextLine());
 
         // Saves amount as negative
         FileManager.addTransaction(description, vendor, -Math.abs(amount));
-        System.out.println("Payment Saved! :)");
+        System.out.println("✅ Store Expense Recorded! :)");
     }
     // Ledger Menu
     public static void ledgerScreen() {
         boolean running = true;
         while (running) { // While running = true, show menu
-            System.out.println("\n===^ Ledger Menu ^===");
-            System.out.println("A) Display All");
-            System.out.println("D) Display Deposits");
-            System.out.println("P) Display Payments");
-            System.out.println("R) Go To Reports");
+            System.out.println("\n===^ Fat Cat Ledger ^===");
+            System.out.println("A) Display All Transactions");
+            System.out.println("D) View Book Sales");
+            System.out.println("P) View Store Expenses");
+            System.out.println("R) Go To Financial Reports");
             System.out.println("H) Home Screen");
             System.out.println("Please choose an option.");
 
@@ -100,14 +100,14 @@ public class Main {
     public static void reportsScreen() {
         boolean running = true;
         while (running) {
-            System.out.println("\n===^ Reports ^===");
-            System.out.println("1) Month to Date");
-            System.out.println("2) Previous Month");
-            System.out.println("3) Year to Date");
-            System.out.println("4) Previous Year");
-            System.out.println("5) Search by Vendor");
+            System.out.println("\n===^ Fat Cat Reports ^===");
+            System.out.println("1) Current Month Sales & Expenses");
+            System.out.println("2) Previous Month Summary");
+            System.out.println("3) Current Year Summary");
+            System.out.println("4) Previous Year Summary");
+            System.out.println("5) Search Customer/Supplier");
             System.out.println("6) Custom Search");
-            System.out.println("0) Go Back");
+            System.out.println("0) Go Back to Ledger");
             System.out.println("Please choose an option.");
 
             String choice = read.nextLine();
@@ -118,7 +118,7 @@ public class Main {
                 case "3" -> ReportManager.yearToDate();
                 case "4" -> ReportManager.previousYear();
                 case "5" -> {
-                    System.out.println("Vendor Name: ");
+                    System.out.println("Customer/Supplier Name: ");
                     String vendor = read.nextLine();
                     ReportManager.searchVendor(vendor);
                 }
@@ -133,10 +133,10 @@ public class Main {
                     System.out.println("Description: ");
                     String description = read.nextLine();
 
-                    System.out.println("Vendor: ");
+                    System.out.println("Customer/Supplier: ");
                     String vendor = read.nextLine();
 
-                    System.out.println("Amount: ");
+                    System.out.println("Payment/Expense Amount: ");
                     String amount = read.nextLine();
 
                     ReportManager.customSearch(

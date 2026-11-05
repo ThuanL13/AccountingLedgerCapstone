@@ -5,11 +5,11 @@ import java.time.LocalTime;
 
 public class Transaction {
     // Variables to store date, time, description, vendor and amount
-    private LocalDate date;
-    private LocalTime time;
-    private String description;
-    private String vendor;
-    private double amount;// Positive = Deposit | Negative = Payment
+    private final LocalDate date;
+    private final LocalTime time;
+    private final String description;
+    private final String vendor;
+    private final double amount;// Positive = Deposit | Negative = Payment
 
     // Constructor for creating new Transaction object
     public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
@@ -38,10 +38,10 @@ public class Transaction {
     // For sout(t) to print out format
     @Override
     public String toString() {
-        return date + " | "
-                + time + " | "
-                + description + " | "
-                + vendor + " | "
-                + String.format("%.2f", amount);
+        return "\uD83D\uDCDA" + date + " | "
+                + "\uD83D\uDD52" + time + " | "
+                + "\uD83D\uDCD6" + description + " | "
+                + "\uD83D\uDC64" + vendor + " | "
+                + String.format("\uD83D\uDCB0 $%.2f", amount);
     }
 }

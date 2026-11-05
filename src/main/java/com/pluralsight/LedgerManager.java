@@ -9,7 +9,7 @@ public class LedgerManager {
     // Method to display only deposits
     public static void displayDeposits() {
         for (Transaction t : FileManager.loadTransactions()) {
-            if (t.getAmount() > 0) { // if amount is > 0, Deposits are postive amounts
+            if (t.getAmount() > 0) { // if amount is > 0, Deposits are positive amounts
                 System.out.println(t);
             }
         }
