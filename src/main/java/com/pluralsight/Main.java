@@ -15,7 +15,7 @@ public class Main {
     public static void homeScreen() {
         boolean running = true; // for the while loop to run home screen menu
         while (running) { // While running is true
-            System.out.println("\n===^\uD83D\uDC31\uD83D\uDCDA FAT CAT BOOKSTORE \uD83D\uDCDA\uD83D\uDC31^===");
+            System.out.println("\n===^\uD83D\uDC31\uD83D\uDCDA FAT CAT BOOK STORE \uD83D\uDCDA\uD83D\uDC31^===");
             System.out.println("===========* Home Menu *===========");
             System.out.println("D) Record Book Sale");
             System.out.println("P) Record Store Expense");
